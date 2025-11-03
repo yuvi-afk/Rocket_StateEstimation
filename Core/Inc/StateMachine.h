@@ -8,6 +8,7 @@ typedef enum {
 	ARMED,
 	FASTASCENT,
 	SLOWASCENT,
+	BRAKESDEPLOYED,
 	APOGEE,
 	FREEFALL,
 	LANDED
@@ -18,7 +19,7 @@ typedef void (*StateExec) (void);
 typedef struct {
 	StateTypes states;
 	uint8_t currentState;
-	StateExec StateHandlers[7];
+	StateExec StateHandlers[9];
 	// 1. Max Altitude 2. Max velocity  3. Velocity of Landing 4. Time of Landing 5. Orientation of STEMnauts 6. STEMnaut survivabilty 7. Landing Temperature
 	float	APRS[8];
 } VehicleStates;
@@ -28,6 +29,7 @@ void GROUND_Handle(void);
 void ARMED_Handle(void);
 void FASTASCENT_Handle(void);
 void SLOWASCENT_Handle(void);
+void PIDTUNING_Handle(void);
 void APOGEE_Handle(void);
 void FREEFALL_Handle(void);
 void LANDED_Handle(void);
