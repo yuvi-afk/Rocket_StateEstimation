@@ -15,6 +15,7 @@ void GroundState(gekf* gkal, sensors* meas, VehicleStates* State);
 void ArmedState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
 void FastAscentState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
 void SlowAscentState(fekf* fkal, VehicleAtd* atd, VehicleStates* State); 
+void BrakesDeployedState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
 void ApogeeState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
 void FreefallState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
 void LandedState(fekf* fkal, VehicleAtd* atd, VehicleStates* State);
