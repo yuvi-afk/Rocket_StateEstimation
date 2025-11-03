@@ -58,6 +58,8 @@ void statemachine_init(void)
         States.StateHandlers[ARMED] = ARMED_Handle;
         States.StateHandlers[FASTASCENT] = FASTASCENT_Handle;
         States.StateHandlers[SLOWASCENT] = SLOWASCENT_Handle;
+		States.StateHandlers[BRAKESDEPLOYED] = BRAKESDEPLOYED
+			-Handle;
         States.StateHandlers[APOGEE] = APOGEE_Handle;
         States.StateHandlers[FREEFALL] = FREEFALL_Handle;
         States.StateHandlers[LANDED] = LANDED_Handle;
@@ -123,6 +125,12 @@ void SLOWASCENT_Handle(void)
 {
         SlowAscentState(&fkal, &atd, &States);
 }
+
+void BRAKESDEPLOYED_Handle(void)
+{
+    BrakesDeployedState(&fkal, &atd, &States);
+}
+
 
 void APOGEE_Handle(void)
 {
